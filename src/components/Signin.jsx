@@ -1,37 +1,42 @@
 import React, { useState } from 'react'
 import './signup.css'
 import { Link, useNavigate } from 'react-router-dom'
-import signin from '../services/auth'
+import auth from '../services/auth';
 import { useDispatch } from 'react-redux'
-const dispatch  = useDispatch()
-const navigate = useNavigate()
+
 
 const Signin = () => {
+    const dispatch  = useDispatch()
+    const navigate = useNavigate()
     const [username,setusername] = useState('')
     const [password,setPassword] = useState('')
     const handleSignin =async(e)=>{
         e.preventDefault()
-        const user = signin({username,password})
-        console.log(user)
+        const user = await auth.signin({username,password})
+       
         if(user){
-            dispatch({type:'SIGNIN_SUCCESS',payload:user})
-            
+          await dispatch({type:'SIGNIN_SUCCESS',payload:user})
+            navigate('/dashboard')
         }
-        navigate('/dashboard')
-        console.log(user)
+        
+
         setPassword('')
         setusername('')
+        console.log(user)
     }
 
   return (
-    <div>
-        <h3>Sign Up</h3>
-        <form action="submit" className='register' onSubmit={handleSignin}>
-            <input type="text" required placeholder='Email..' value={username} onChange={(e)=>{setusername(e.target.value)}}/>
-            <input type="text" required placeholder='Password..' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
-            <div><br /><button>signUp</button></div>
+    <div className='bg-primary vh-100 d-flex flex-column justify-content-center align-items-center'>
+        <h3 className='text-light'>Sign In</h3>
+        <form className='bg-white p-3 d-flex flex-column align-items-center rounded-2' action="submit"  onSubmit={handleSignin}>
+            <input className='form-control mb-2 ' type="text" required placeholder='Email..' value={username} onChange={(e)=>{setusername(e.target.value)}}/>
+            <input className='form-control' type="text" required placeholder='Password..' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+            <div><br /><button className='btn btn-success'>signUp</button></div>
+            <p className='text-dark mt-2 ms-2'>Not a user? <Link className='btn btn-dark ms-2' to='/signup'>Register</Link></p>
+        <Link to='/forgotpassword' className='btn text-danger '>Forgot Password?</Link>
         </form>
-        <p>Not a user? <Link to='/signup'>Register</Link></p>
+        
+       
     </div>
   )
 }

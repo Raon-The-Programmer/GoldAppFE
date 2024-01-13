@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div>
         <nav>
-            <ul>
-                <li>
+            <ul className='d-flex justify-content-center align-items-center'>
+                <li className='mx-5'>
                     <NavLink to='/'>Home</NavLink>
                 </li>
                 <li>
