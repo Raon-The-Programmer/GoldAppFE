@@ -12,7 +12,6 @@ const ResetPassword = () => {
 
     try {
       const res = await auth.resetPassword({ userId: id, token, newPassword });
-        console.log("Hiiii")
       console.log('Password reset successful');
       navigate('/signin');
     } catch (error) {

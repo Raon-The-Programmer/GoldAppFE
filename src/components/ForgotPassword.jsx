@@ -8,7 +8,7 @@ const ForgotPassword = () => {
   const handleMail = async(e)=>{
     e.preventDefault()
     if(auth.forgotpassword({email})){
-      console.log('hi')
+    
       navigate('/signin')
       setemail('')
     }

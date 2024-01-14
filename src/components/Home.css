@@ -1,0 +1,11 @@
+.glassmorphism-background {
+    background: rgba(251, 184, 16, 0.255); 
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  

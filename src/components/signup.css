@@ -1,6 +1,85 @@
-.register{
-    width: 15%;
-
+.signup-container {
+    background: rgba(251, 184, 16, 0.255);
+    backdrop-filter: blur(10px);
+    height: 80vh;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .signup-form label {
+    font-weight: bold;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-form button {
+    width: 100%;
+  }
+  
+  .signup-form p {
+    margin-top: 10px;
+  }
+  .signin-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(251, 184, 16, 0.255);
+    backdrop-filter: blur(10px);
+    height: 80vh;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.signin-form {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff; 
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.signin-form label {
+    font-weight: bold;
+}
+
+.signin-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.signin-form button {
+    width: 100%;
+}
+
+.signin-form p {
+    margin-top: 10px;
+}
+.glassmorphism-background {
+    background: rgba(211, 138, 11, 0.575);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glassmorphism-form {
+    max-width: 400px;
+    margin: auto;
+  }
+  

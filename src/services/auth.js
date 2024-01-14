@@ -38,11 +38,12 @@ const forgotpassword = async({email})=>{
 };
 const resetPassword = async ({ userId, token, newPassword }) => {
     try {
-      const res = await authInstance.post('/user/resetpassword', {
-        userId,
-        token,
-        newPassword,
-      });
+        const res = await authInstance.post(`user/resetpassword/${userId}/${token}`, {
+            userId,
+            token,
+            newPassword,
+          });
+          
       console.log(res);
     } catch (err) {
       console.log({ Error: err });

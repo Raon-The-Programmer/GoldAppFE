@@ -100,9 +100,11 @@ const Dashboard = () => {
               <h4>{totalPrice.value}</h4>
             </div>
           )}
-          <button onClick={handleLogout} className="btn btn-danger mt-3">Logout</button>
+          
         </div>
       </div>
+      <div className='d-flex align-items-end'>
+      <button onClick={handleLogout} className="btn btn-danger mt-3">Logout</button></div>
     </div>
   );
 };
