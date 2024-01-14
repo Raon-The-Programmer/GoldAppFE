@@ -14,13 +14,13 @@ const Home = () => {
     <div className="glassmorphism-background">
       <Navbar />
       <div className="container text-center">
-        <h1 className="display-4 text-primary">Welcome to the Gold Calculator App</h1>
+        <h1 className="display-4 text-primary"><strong>Welcome to the Gold Calculator App</strong></h1>
         <p className="lead">
           Calculate the value of your gold based on current market rates and purity.
           Simply input the weight and purity of your gold to get an accurate estimate.
         </p>
         <div className="gold-details mt-4">
-          <h2 className="text-warning">Gold Price Details</h2>
+          <h2 className="text-success"><strong>Gold Price Details</strong></h2>
           <p>
             {goldDetails.weight} of {goldDetails.purity} gold in {goldDetails.location} is{' '}
             <strong>{goldDetails.price}</strong>.
@@ -35,7 +35,7 @@ const Home = () => {
           </p>
         </div>
         <div className="tips mt-4">
-          <h2 className="text-info">Tips for Accurate Calculation</h2>
+          <h2 className="text-light">Tips for Accurate Calculation</h2>
           <ul className="list-unstyled">
             <li>Ensure the weight is in grams.</li>
             <li>Provide the correct karat value for accurate purity.</li>
