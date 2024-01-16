@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
-      <div className="container">
+      <div>
         <NavLink to="/" className="navbar-brand">
           URL Shortner
         </NavLink>

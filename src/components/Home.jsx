@@ -17,7 +17,7 @@ const ShortenerHome = () => {
   return (
     <div className="glassmorphism-background">
       <Navbar />
-      <div className="container text-center">
+      <div className=" text-center">
         <h1 className="display-4 text-primary"><strong>Welcome to the URL Shortener</strong></h1>
         <p className="lead">
           Shorten your long URLs quickly and easily.
