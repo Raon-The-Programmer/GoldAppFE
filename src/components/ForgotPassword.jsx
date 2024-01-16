@@ -3,19 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import auth from '../services/auth'
 
 const ForgotPassword = () => {
-  const [email,setemail] = useState('')
   const navigate = useNavigate()
-  const handleMail = async(e)=>{
-    e.preventDefault()
-    if(auth.forgotpassword({email})){
-    
-      navigate('/signin')
-      setemail('')
+  const [email,setemail] = useState('')
+  const handleMail = async (e) => {
+    e.preventDefault();
+    try {
+      await auth.forgotpassword({ email });
+      navigate('/signin');
+      setemail('');
+    } catch (error) {
+      console.log('Error in handleMail:', error);
     }
-    
-    
-  
-  }
+  };
   return (
     <div className='bg-primary vh-100 d-flex flex-column justify-content-center align-items-center'>
         <h3 className='text-light'>Forgot Password</h3>

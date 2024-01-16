@@ -1,45 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
-import './Home.css'; // Import your custom styles
+import './Home.css'; // Import your custom styles for the URL shortener
 
-const Home = () => {
-  const goldDetails = {
-    weight: '10g',
-    purity: '24k (99.9%)',
-    location: 'Chennai',
-    price: '64,450.00 Indian Rupee',
+const ShortenerHome = () => {
+  const [originalUrl, setOriginalUrl] = useState('');
+  const [shortenedUrl, setShortenedUrl] = useState('');
+
+  const handleShortenUrl = () => {
+    // Implement your URL shortening logic here
+    // For example, you can use a service or generate a short URL locally
+    // Update the 'shortenedUrl' state with the result
+    const shortUrl = 'https://short.url/abcd123';
+    setShortenedUrl(shortUrl);
   };
 
   return (
     <div className="glassmorphism-background">
       <Navbar />
       <div className="container text-center">
-        <h1 className="display-4 text-primary"><strong>Welcome to the Gold Calculator App</strong></h1>
+        <h1 className="display-4 text-primary"><strong>Welcome to the URL Shortener</strong></h1>
         <p className="lead">
-          Calculate the value of your gold based on current market rates and purity.
-          Simply input the weight and purity of your gold to get an accurate estimate.
+          Shorten your long URLs quickly and easily.
+          Enter the original URL to get a shortened version.
         </p>
-        <div className="gold-details mt-4">
-          <h2 className="text-success"><strong>Gold Price Details</strong></h2>
-          <p>
-            {goldDetails.weight} of {goldDetails.purity} gold in {goldDetails.location} is{' '}
-            <strong>{goldDetails.price}</strong>.
-          </p>
-        </div>
-        <div className="calculation-method mt-4">
-          <h2 className="text-success">Calculation Method</h2>
-          <p>
-            Our app uses the following formula to calculate the value of your gold:
-            <br />
-            Value = (Weight in grams) x (Purity in karats) x (Gold Rate per gram)
-          </p>
-        </div>
+        {shortenedUrl && (
+          <div className="shortened-url mt-4">
+            <h2 className="text-success"><strong>Shortened URL:</strong></h2>
+            <p>
+              <a href={shortenedUrl} target="_blank" rel="noopener noreferrer">
+                {shortenedUrl}
+              </a>
+            </p>
+          </div>
+        )}
         <div className="tips mt-4">
-          <h2 className="text-light">Tips for Accurate Calculation</h2>
+          <h2 className="text-light">Tips for Effective URL Shortening</h2>
           <ul className="list-unstyled">
-            <li>Ensure the weight is in grams.</li>
-            <li>Provide the correct karat value for accurate purity.</li>
-            <li>Check the latest gold rates for precise results.</li>
+            <li>Ensure the original URL is accurate and complete.</li>
+            <li>Share the shortened URL to make links more manageable.</li>
+            <li>Use a reputable URL shortening service for reliability.</li>
           </ul>
         </div>
       </div>
@@ -47,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ShortenerHome;

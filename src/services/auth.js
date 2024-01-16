@@ -18,6 +18,8 @@ const signin = async (user) => {
         const res = await authInstance.post('/user/signin', user);
         if (res.data) {
             console.log(`User ${res.data.name} Logged in Successfully!!`);
+
+            
             sessionStorage.setItem('loggedInUser', JSON.stringify(res.data));
             return res.data;
         }

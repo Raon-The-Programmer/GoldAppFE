@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
         <NavLink to="/" className="navbar-brand">
-          Gold App
+          URL Shortner
         </NavLink>
         <button
           className="navbar-toggler"
